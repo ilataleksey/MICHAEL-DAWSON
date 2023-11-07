@@ -2,13 +2,19 @@ def main():
     print('Приветствую тебя, пользователь!')
     print('В этой программе тебе будет предложено сыграть в 4 игры:')
     print('\t1. Счетчик')
-    print('\t2. Вторая игра')
+    print('\t2. аволС')
     print('\t3. Третья игра')
     print('\t4. Четвертая игра')
-    game_number = int(input('Введи номер игры, в которую хочешь сыграть, и нажми "Enter":'))
 
-    if game_number == 1:
-        game_1()
+    game_number = 0
+    while True:
+        game_number = int(input('Введи номер игры, в которую хочешь сыграть, и нажми "Enter":'))
+        if game_number == 1:
+            game_1()
+            break
+        if game_number == 2:
+            game_2()
+            break
 
 
 def game_1():
@@ -43,6 +49,39 @@ def game_1():
     for i in range(start, stop, interval):
         print(i)
     print('Расчет завершен!')
+
+    print('\nСпасибо за игру!')
+
+
+def game_2():
+    print('''
+        Вы выбрали игру под номером 2 
+
+        *****************
+        ***** аволС *****
+        *****************
+        ''')
+    input('Нажми "Enter" чтобы продолжить...')
+
+    print('''Об игре:
+    1. Вам нужно задать слово.
+    2. Программа напишет заданное слово в обратном порядке.
+            ''')
+
+    answer = input('Нажми "Enter" чтобы начать игру или "q+Enter", чтобы выйти:')
+    if answer.lower() == "q":
+        return
+
+    word = input('Укажи слово:')
+    new_word = ''
+    for i in range(len(word)):
+        new_word += word[- (i + 1)]
+
+    input('Нажми "Enter" чтобы узнать оволС...')
+    print(f'''
+    ***{"*" * len(word)}***
+    ** {new_word} **
+    ***{"*" * len(word)}***''')
 
     print('\nСпасибо за игру!')
 
